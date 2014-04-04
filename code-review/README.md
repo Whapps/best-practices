@@ -1,4 +1,4 @@
-Propogate the cultural goals of OR through code review.
+Propogate development culture and ecosystem to developers through code review.
 
 Promote effortless development workflow (e.g with git, c5, legacy, etc).
 
