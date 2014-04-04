@@ -8,11 +8,11 @@ Promote "effortless" development workflow (e.g. git, c5, legacy, etc).
 
 Promote quality coding practices.
 
-Improve practice, in finite steps, with finite chunks of code.
-
 Make testable code.
 
 Make literate code.
+
+Improve practice, in finite steps, with finite chunks of code.
 
 Identify and promote shareable coding practices.
 
