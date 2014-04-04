@@ -12,8 +12,8 @@
     excludesfile = $HOME/.gitignore_global
     pager = less -FRSX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-#    symlinks = false
     autocrlf = false
+#    symlinks = false
 
 [color]
     diff = auto
@@ -63,17 +63,17 @@
 #    brnm = branch --no-merged
 #    cat   = -p cat-file -p
     ci = commit
-    cim = commit -m
-    cima = commit -a -m
+#    cim = commit -m
+#    cima = commit -a -m
     cl = config -l
 #    clg = config -l | grep
     co = checkout
-    com = checkout master 
-    cp = cherry-pick
+#    com = checkout master 
+#    cp = cherry-pick
 #    cpnx = cherry-pick --no-commit -x
 #    df = diff
     di = diff
-    dic = diff --color-words
+#    dic = diff --color-words
     dis = diff --stat
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     hard = reset --hard
@@ -85,25 +85,22 @@
     lt = log --topo-order
     ls = ls-files
 #    me = merge --no-commit --no-ff
-    pu = push #--progress
-    puo = push --progress origin
-    pug = push --progress github
+#    pu = push --progress
     rl = reflog
     re = remote
-    renog = remote rename origin github
     reao = remote add origin
     rmc = rm --cached
     rmcf = rm -f --cached
     rnc = revert --no-commit
     sb = show-branch
-    shown =show --name-only
+    shown = show --name-only
     shp = stash pop
     sh = stash
     staged = diff --cached
-#    sto   = st -o
+#    sto = st -o
     st = status
     stu = status --untracked-files=no
-    unstaged = diff
+#    unstaged = diff
     unstage = reset HEAD
 #    up    = !git remote update ; git gc
 #st    = "!f() { git ls-files --exclude-standard -t -u -s -m -d $@ | sed -e 's/C.*\t/C /' ; } ; f"
