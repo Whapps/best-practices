@@ -1,9 +1,12 @@
 Using __vim__ for fun and profit
 ================================
 
-* [Basic commands]()
+* Basic commands
+** [Link](http://somewhere/)
 
-* [Advanced commands]()
+* Advanced commands
+** [Link](http://somewhere/)
 
-* [Handy plugins]()
+* Handy plugins
+** [Link](http://somewhere/)
 
