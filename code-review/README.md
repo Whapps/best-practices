@@ -1,8 +1,8 @@
 Propogate development culture and ecosystem through code review.
 
-Promote commonality and consistency.
+Promote commonality and consistency (but not conformity and copy-pasta).
 
-Promote communicaton.
+Promote effective, concise communicaton.
 
 Promote "effortless" development workflow (e.g. git, c5, legacy, etc).
 
