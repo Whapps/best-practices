@@ -26,6 +26,4 @@ Identify best project progress documentation practices.
 
 Identify best markup conventions.
 
-Practice effective project and workflow methodologies.
-
 Use automated tools to maintain constency, eliminate tedium and mistakes.
