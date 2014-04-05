@@ -1,2 +1,0 @@
-MySQL Best Practices
-====================
