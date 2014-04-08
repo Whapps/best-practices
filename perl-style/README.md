@@ -25,11 +25,12 @@ my %cincinnati_reds = ( catcher => 'Devin Mesoraco',
 
 // worse
 my %cincinnati_reds = ( catcher => 'Devin Mesoraco',
-                         shortstop => 'Zack Cozart',
+                        shortstop => 'Zack Cozart',
 );
- // worst
- my %cincinnati_reds = ( catcher => 'Devin Mesoraco',
-                          shortstop => 'Zack Cozart' );
+
+// worst
+my %cincinnati_reds = ( catcher => 'Devin Mesoraco',
+                        shortstop => 'Zack Cozart' );
 
 // good
 my %cincinnati_reds = (
