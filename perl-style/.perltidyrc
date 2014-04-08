@@ -1,1 +1,32 @@
-# TODO
+# Online Rewards .perltidyrc file
+
+# Indent level is 4 columns. Perltidy uses spaces by default
+-i=4
+
+# Continuation indent is 4 columns.
+# Continuation indentation is extra indentation spaces applied when a long line is broken.
+-ci=4
+
+# Opening Braces Left
+--opening-brace-on-new-line
+
+# No maximum line width
+-l=0
+
+# Output to STDOUT
+-st
+
+# Errors to STDERR
+-se
+
+# Always break a line after opening token (default).
+-vt=0
+
+# Do not outdent labels.
+-nola
+
+# Do not outdent comments
+-nolc
+
+# Don't outdent long quoted strings
+-nolq
