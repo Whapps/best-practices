@@ -3,7 +3,7 @@
 ## Table of Contents
   1. [Whitespace](#whitespace)
   1. [Blocks](#blocks)
-  1. [Perl::Tidy](#Perl::Tidy)
+  1. [perltidy](#perltidy)
 
 ## Whitespace
 
@@ -60,10 +60,10 @@ if (test)
 
 **[⬆ back to top](#table-of-contents)**
 
-## Perl::Tidy
-Perltidy is a perl script indenter and reformatter. It is a tool, not a gospel, so its output should be treated pragmatically rather than dogmatically.
+## perltidy
+`perltidy` is a perl script indenter and reformatter. It is a tool, not a gospel, so its output should be treated pragmatically rather than dogmatically.
 
-Perltidy can be installed via:
+`perltidy` can be installed via:
 
 ```shell
 $ cpanm Perl::Tidy
