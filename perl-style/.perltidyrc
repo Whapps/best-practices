@@ -3,10 +3,6 @@
 # Indent level is 4 columns. Perltidy uses spaces by default
 -i=4
 
-# Continuation indent is 4 columns.
-# Continuation indentation is extra indentation spaces applied when a long line is broken.
--ci=4
-
 # Opening Braces Left
 --opening-brace-on-new-line
 
