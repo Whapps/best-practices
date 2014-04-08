@@ -17,7 +17,7 @@ It may seem like a dated convention, but it is a convention that is [still widel
 ### Break immediately after an opening token if a line break is necessary at all.
 
 Further, put the closing token on its own line and always include a trailing comma. This maximizes the ease with which the list can be modified.
-      ```perl
+    ```perl
     // bad
     my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
         shortstop => 'Zack Cozart',
@@ -45,7 +45,7 @@ Further, put the closing token on its own line and always include a trailing com
 ### Use [Allman (BSD) style](https://en.wikipedia.org/wiki/Indent_style#Allman_style) indentation.
 
 This may not be the most popular indent style, but writing in this manner will keep new code consistent with nearly a decade's worth of legacy code.
-      ```perl
+    ```perl
     // bad
     if (test) {
         return false;
@@ -64,6 +64,7 @@ This may not be the most popular indent style, but writing in this manner will k
 Perltidy is a perl script indenter and reformatter. It is a tool, not a gospel, so its output should be treated pragmatically rather than dogmatically.
 
 Perltidy can be installed via:
+
 ```shell
 cpanm Perl::Tidy
 ```
