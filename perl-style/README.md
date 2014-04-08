@@ -19,20 +19,20 @@ It may seem like a dated convention, but it is a convention that is [still widel
 Further, put the closing token on its own line and always include a trailing comma. This maximizes the ease with which the list can be modified.
 ```perl
 // bad
-my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
+my %cincinnati_reds = ( catcher => 'Devin Mesoraco',
     shortstop => 'Zack Cozart',
 );
 
 // worse
-my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
+my %cincinnati_reds = ( catcher => 'Devin Mesoraco',
                          shortstop => 'Zack Cozart',
 );
  // worst
- my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
+ my %cincinnati_reds = ( catcher => 'Devin Mesoraco',
                           shortstop => 'Zack Cozart' );
 
 // good
-my %cinccinnati_reds = (
+my %cincinnati_reds = (
     catcher => 'Devin Mesoraco',
     shortstop => 'Zack Cozart',
 );
