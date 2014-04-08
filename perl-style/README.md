@@ -7,12 +7,20 @@
 
 ## Whitespace
 
-  - Use soft tabs set to 4 spaces. [Sorry, tabs lost the war.](http://sideeffect.kr/popularconvention) [Even perltidy says to avoid them](http://perltidy.sourceforge.net/perltidy.html#tabs).
+### Use soft tabs set to 4 spaces.
+[Sorry, tabs lost the war.](http://sideeffect.kr/popularconvention) [Even perltidy says to avoid them](http://perltidy.sourceforge.net/perltidy.html#tabs).
+ 
+### Avoid lines longer than 80 columns.
+ 
+It may seem like a dated convention, but it is a convention that is [still widely followed today.](http://sideeffect.kr/popularconvention) Use your personal judgement when breaking this rule.
     
 **[⬆ back to top](#table-of-contents)**
 
 ## Blocks
-  - Use [Allman (or BSD) style](https://en.wikipedia.org/wiki/Indent_style#Allman_style) indentation. There is no good reason for this, just a decade of legacy code written in this format.
+
+### Use [Allman (BSD) style](https://en.wikipedia.org/wiki/Indent_style#Allman_style) indentation. 
+
+This may not be the most popular indent style, but writing in this manner will keep new code consistent with nearly a decade's worth of legacy code.
       ```perl
     // bad
     if (test) {
