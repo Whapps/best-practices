@@ -13,12 +13,6 @@
 # No maximum line width
 -l=0
 
-# Output to STDOUT
--st
-
-# Errors to STDERR
--se
-
 # Always break a line after opening token (default).
 -vt=0
 
@@ -30,3 +24,10 @@
 
 # Don't outdent long quoted strings
 -nolq
+
+# These options cause perltidy to work as a filter.
+# Output to STDOUT
+-st
+# Errors to STDERR
+-se
+
