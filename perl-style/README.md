@@ -18,24 +18,24 @@ It may seem like a dated convention, but it is a convention that is [still widel
 
 Further, put the closing token on its own line and always include a trailing comma. This maximizes the ease with which the list can be modified.
 ```perl
-    // bad
-    my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
-        shortstop => 'Zack Cozart',
-    );
+// bad
+my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
+    shortstop => 'Zack Cozart',
+);
 
-    // worse
-    my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
-                             shortstop => 'Zack Cozart',
-    );
-     // worst
-     my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
-                              shortstop => 'Zack Cozart' );
+// worse
+my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
+                         shortstop => 'Zack Cozart',
+);
+ // worst
+ my %cinccinnati_reds = ( catcher => 'Devin Mesoraco',
+                          shortstop => 'Zack Cozart' );
 
-    // good
-    my %cinccinnati_reds = (
-        catcher => 'Devin Mesoraco',
-        shortstop => 'Zack Cozart',
-    );
+// good
+my %cinccinnati_reds = (
+    catcher => 'Devin Mesoraco',
+    shortstop => 'Zack Cozart',
+);
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -46,16 +46,16 @@ Further, put the closing token on its own line and always include a trailing com
 
 This may not be the most popular indent style, but writing in this manner will keep new code consistent with nearly a decade's worth of legacy code.
 ```perl
-    // bad
-    if (test) {
-        return false;
-    }
+// bad
+if (test) {
+    return false;
+}
 
-    // good
-    if (test)
-    {
-        return false;
-    }
+// good
+if (test)
+{
+    return false;
+}
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -66,7 +66,7 @@ Perltidy is a perl script indenter and reformatter. It is a tool, not a gospel, 
 Perltidy can be installed via:
 
 ```shell
-cpanm Perl::Tidy
+$ cpanm Perl::Tidy
 ```
 
 Included in this folder is a .perltidyrc file that contains the Online Rewards suggested defaults.
