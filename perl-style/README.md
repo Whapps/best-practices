@@ -74,6 +74,6 @@ $ cpanm Perl::Tidy
 
 Included in this folder is a .perltidyrc file that contains the Online Rewards suggested defaults.
 
-When doing any code reformatting always commit the changes separate from any other changes. Committing formatting changes along with other changes can cause complications when diff-ing.
+When faced with poorly formatted code feel free to use perltidy but always commit the formatting changes separate from any other changes. Committing formatting changes along with other changes can cause complications when diff-ing.
 
 **[⬆ back to top](#table-of-contents)**
