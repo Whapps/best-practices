@@ -1,1 +1,29 @@
-# TODO
+# Online Rewards .perltidyrc file
+
+# Indent level is 4 columns. Perltidy uses spaces by default
+-i=4
+
+# Opening Braces Left
+--opening-brace-on-new-line
+
+# No maximum line width
+-l=0
+
+# Always break a line after opening token (default).
+-vt=0
+
+# Do not outdent labels.
+-nola
+
+# Do not outdent comments
+-nolc
+
+# Don't outdent long quoted strings
+-nolq
+
+# These options cause perltidy to work as a filter.
+# Output to STDOUT
+-st
+# Errors to STDERR
+-se
+
