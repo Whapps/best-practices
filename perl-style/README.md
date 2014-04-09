@@ -62,6 +62,25 @@ if (test)
 }
 ```
 
+### Always return via an explcit ```return```
+
+Since perl will return the value of the last expression evaluated in a subroutine if return is not passed, explicit returns should be used to prevent unexpected return values. This also improves readability in subs where there are multiple returns.
+
+```
+# bad
+sub do_something
+{
+    my $thing = 45;
+}
+
+# good
+sub do_something
+{
+	my $thing = 45;
+    return $thing;
+}
+```
+
 **[⬆ back to top](#table-of-contents)**
 
 
