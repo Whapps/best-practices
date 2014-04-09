@@ -12,7 +12,9 @@
 
 ### Avoid lines longer than 80 columns.
 
-It may seem like a dated convention, but it is a convention that is [still widely followed today.](http://sideeffect.kr/popularconvention) Use your personal judgement when breaking this rule.
+It may seem like a dated convention, but it is a convention that is [still widely followed today.](http://sideeffect.kr/popularconvention) Generally, 80 columns will let someone on a small screen (like a 13" non-retina Macbook) fully view 2 files side by side.
+
+There are cases when a long line is better overzealous line breaking. Use your personal judgement when breaking this rule.
 
 ### Break immediately after an opening token if a line break is necessary at all.
 
@@ -71,5 +73,7 @@ $ cpanm Perl::Tidy
 ```
 
 Included in this folder is a .perltidyrc file that contains the Online Rewards suggested defaults.
+
+When doing any code reformatting always commit the changes separate from any other changes. Committing formatting changes along with other changes can cause complications when diff-ing.
 
 **[⬆ back to top](#table-of-contents)**
