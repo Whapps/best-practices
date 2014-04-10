@@ -62,7 +62,7 @@ if (test)
 }
 ```
 
-### Always return via an explcit ```return```
+### Always return via an explicit ```return```
 
 Since perl will return the value of the last expression evaluated in a subroutine if return is not passed, explicit returns should be used to prevent unexpected return values. This also improves readability in subs where there are multiple returns.
 
@@ -76,7 +76,7 @@ sub do_something
 # good
 sub do_something
 {
-	my $thing = 45;
+    my $thing = 45;
     return $thing;
 }
 ```
@@ -94,14 +94,14 @@ That way later we can just ```perldoc Your::Module``` and get a user interface g
 =head2 some_method
 
  Takes no argument.  This is a reason you would
- call this method.  Here is what you might 
+ call this method.  Here is what you might
  expect it to do and/or return.
 
 =cut
 
 sub some_method
 {
-	my $self = shift;
+    my $self = shift;
     print "Doing something\n";
 }
 ```
