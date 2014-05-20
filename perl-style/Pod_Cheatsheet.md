@@ -100,7 +100,7 @@ Creates the following HTML (via `pod2html`):
 <p>With text</p>
 
 </dd>
-<dt id="Liste-Item-Two">Liste Item Two</dt>
+<dt id="List-Item-Two">List Item Two</dt>
 <dd>
 
 <pre><code> my $Verbatim_Text = 1;</code></pre>
