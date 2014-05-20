@@ -155,4 +155,4 @@ This following uses escapes for gt/lt Some Person, &lt;some.person@online-reward
 Here are some html entities: &eacute;, &laquo;, &iexcl;, &ordf;
 ```
 
-The above also rensers on the command line correctly using `perldoc`
+The above also renders on the command line correctly using `perldoc`
