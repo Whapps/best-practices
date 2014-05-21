@@ -19,7 +19,7 @@ The following sections should be present at the top of all pm files written:
 
 `=head1 PARENT MODULES` - A quick blurb on the parent code used (Base/Base2/etc)
 
-`=head1 METHODS` - A header to signal the start of the methods
+`=head1 XXX METHODS` - A header to signal the start of a method section
 
 ```
 =head1 NAME 
@@ -35,16 +35,16 @@ This module implements some custom nominations, has an API, contains ported code
 L<Chameleon5::Incentive::Base2>
 L<Chameleon5::Contrib::Site::ExtendedBase>
 
-=head1 METHODS
+=head1 NOMINATION METHODS
 ```
 
 Per-Method Pod
 --------------
-Each method following the header section above should have its own subheader
+Each method following the METHODS header section above should have its own subheader.  The methods should be related to the main `=head1` header they are listed under.  (For example, the method section might be NOMINAITON or GAME).
 
 `=head2 method_name` - What the method does, how to use it.
 
-If there was a method implemented in the code that **overrides** a method in the base/parent code, we should be adding that under another level one heading called `=head1 OVERRIDDEN METHODS`
+If there was a method implemented in the code that **overrides** a method in the base/parent code, we should be noting that in the `=head2` section that describes the method.
 
 
 Optional Pod Sections
