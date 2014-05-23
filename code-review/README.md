@@ -80,5 +80,8 @@ discussion is.
 * If too many bugs or major issues were identified by a reviewer, a second
 review may be required before committing any fixes.
 
+* The developer responsible for the code is also responsible for making all
+necessary review-related changes.
+
 * Use the GitHub compare view to see the change diff.
 
