@@ -77,5 +77,8 @@ by a blank line, followed by the type of lines described earlier.
 there to quietly take notes or answer questions.  Argument is not accptible but
 discussion is.
 
+* If too many bugs or major issues were identified by a reviewer, a second
+review may be required before committing any fixes.
+
 * Use the GitHub compare view to see the change diff.
 
