@@ -1,3 +1,6 @@
+In order to maintain a high quality of Online-Rewards code, this document
+establishes the means by which code is vetted for deployment by OLR developers.
+
 Goals:
 ======
 
