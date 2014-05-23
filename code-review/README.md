@@ -59,6 +59,8 @@ overabundance of time and milestone based items that we would never use.
 How?
 ----
 
+* Every member of the team has their code reviewed.
+
 * Each member of the group submits code for review via email (or in a
 best-practices meeting).
 
@@ -67,17 +69,40 @@ best-practices meeting).
 * Each member of the group should bring any questions that they have regarding
 the logic of the code or the documentation.
 
+Focus on:
+
+1 Intent
+  * What change is the author trying to make?
+  * Is the bug they're fixing really a bug?
+  * Is the feature they're adding one that is wanted?
+2 Architecture
+  * Is this the right place for the code to operate?
+3 Implementation
+  * Does the code do what it says?
+  * Does it introduce new bugs?
+  * Is it documented?
+4 Grammar
+  * Comment and doc quality
+  * Variable, routine name quality, etc
+
 * Each member of the group, that has found a section of code to change, files a
-pull request for the original code in question.
+pull request for the original code in question ("TODO").
 
 (A PR takes into account not only what code to inspect, but also where you
 intend changes to be applied.  Maintains a history of code review based
 changes.)
 
+* Keep your changes focused to the minimum necessary.  Otherwise further review
+will be necessary.
+
 * Commit comments - Use an action verb and explain why the changes were made in 50
 chars or less.  If there are more substantial changes to document, use the
 standard commit message format of a single line with "Multiple changes:" followed
 by a blank line, followed by the type of lines described earlier.
+
+* Provide suggestions for follow up.
+  * Sometimes you'll want to suggest a change, but it's big, or not strictly
+    related to the current patch, and can be done separately.
 
 * The person whos code is being reviewed is either not to be in the room or
 there to quietly take notes or answer questions.  Argument is not accptible but
@@ -96,3 +121,15 @@ fixing the change or backing it out.
 
 * Use the GitHub compare view to see the change diff.
 
+Benefits
+--------
+
+This may be "preaching to the choir" but:
+
+"By forcing someone else to have the familiarity to review a piece of code you guarantee that at least two people understand it."
+
+"By getting someone else to provide feedback based on reading, rather than writing, the code you verify that the code is readable."
+
+"You increase the chances that someone will notice a bug before it manifests itself in production."
+
+"By having a culture of "everyone's code gets reviewed" you promote a culture of positive, constructive feedback."
