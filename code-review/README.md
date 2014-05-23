@@ -14,29 +14,24 @@ Goals:
 * Promote "effortless" development workflow (e.g. git, c5, legacy, etc).
 
 * Make testable code.
-
-** TDD
-** Use argument passing to influence behavior for testing purposes
+* TDD
+* Use argument passing to influence behavior for testing purposes
 
 * Make literate code.
-
-** Naming conventiions
+* Naming conventiions
 
 * Identify intrensic OLR code idioms, fixtures and artifacts.
-
-** Tables class
-** Form class
-** tree_append, as_tree
+* Tables class
+* Form class
+* tree_append, as_tree
 
 * Identify effective code documentation and in-line comment principles.
-
-** [POD](https://github.com/Whapps/best-practices/blob/master/perl-style/Pod_Coverage.md "POD coverage")
-** Inline code comments on the line preceding each code paragraph.
+* [POD](https://github.com/Whapps/best-practices/blob/master/perl-style/Pod_Coverage.md "POD coverage")
+* Inline code comments on the line preceding each code paragraph.
 
 * Use automated tools to maintain constency, eliminate tedium and mistakes.
-
-** [Perltidy](https://github.com/Whapps/best-practices/tree/master/perl-style#perltidy/ "Perltidy")
-** XMLLint
+* [Perltidy](https://github.com/Whapps/best-practices/tree/master/perl-style#perltidy/ "Perltidy")
+* XMLLint
 
 Mechanics:
 ==========
