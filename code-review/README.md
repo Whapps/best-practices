@@ -1,8 +1,7 @@
-In order to maintain a high quality of Online-Rewards code, this document
-establishes the means by which code is vetted for deployment by OLR developers.
+**In order to maintain a high quality of Online-Rewards code, this document
+establishes the means by which code is vetted for deployment by OLR developers.**
 
-Code review is a mandatory best practice.  Code review that is not mandatory is
-called "asking for advice."
+"Mandatory code review is a best practice.  Code review that is not mandatory is called asking for advice."
 
 Goals:
 ======
