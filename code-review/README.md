@@ -10,28 +10,24 @@ Goals:
 
 * Identify and promote shareable coding practices.
 
-* Collect and disseminate knowledge.
-
 * Improve practice, in finite steps, with finite chunks of code.
 
 * Promote commonality and consistency (but not conformity and copy-pasta).
 
-* Promote "effortless" development workflow (e.g. git, c5, legacy, etc).
-
 * Make testable code.
-  * TDD
-  * Use argument passing to influence behavior for testing purposes
 
 * Make literate code.
-  * Naming conventiions
 
 * Identify intrensic OLR code idioms, fixtures and artifacts.
   * Tables class
-  * Form class
-  * tree_append, as_tree
+  * Forms class
+  * tree_append, as_tree, etc.
 
-* Identify and ameliorate any code-smells with improved logic or enhanced
+* Identify and ameliorate code-smells with improved logic or enhanced
 comments.
+  * Overly long routines
+  * Overly complex conditions
+  * Magic literals, etc.
 
 * Identify effective code documentation and in-line comment principles.
   * [POD](https://github.com/Whapps/best-practices/blob/master/perl-style/Pod_Coverage.md "POD coverage")
