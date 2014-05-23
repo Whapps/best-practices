@@ -70,5 +70,9 @@ chars or less.  If there are more substantial changes to document, use the
 standard commit message format of a single line with "Multiple changes:" followed
 by a blank line, followed by the type of lines described earlier.
 
+* The person whos code is being reviewed is either not to be in the room or
+there to quietly take notes or answer questions.  Argument is not accptible but
+discussion is.
+
 * Use the GitHub compare view to see the change diff.
 
