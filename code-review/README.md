@@ -28,6 +28,9 @@ Goals:
   * Form class
   * tree_append, as_tree
 
+* Identify and ameliorate any code-smells with improved logic or enhanced
+comments.
+
 * Identify effective code documentation and in-line comment principles.
   * [POD](https://github.com/Whapps/best-practices/blob/master/perl-style/Pod_Coverage.md "POD coverage")
   * Inline code comments on the line preceding each code paragraph.
