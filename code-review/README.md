@@ -58,6 +58,9 @@ best-practices meeting).
 
 * Read code flagged for review.
 
+* Each member of the group should bring any questions that they have regarding
+the logic of the code or the documentation.
+
 * Each member of the group, that has found a section of code to change, files a
 pull request for the original code in question.
 
