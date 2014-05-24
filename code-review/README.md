@@ -66,11 +66,8 @@ best-practices meeting).
 * Each member of the group should bring any questions that they have regarding
 the logic of the code or the documentation.
 
-* Each member of the group, that has found a section of code to change, files a
-pull request for the original code in question ("TODO").
-
-* Keep your changes focused to the minimum necessary.  Otherwise further review
-will be necessary.
+* Each member of the group, that has found sections of code to change, files a
+pull request.
 
 * Commit comments - Use an action verb and explain why the changes were made in 50
 chars or less.  If there are more substantial changes to document, use the
