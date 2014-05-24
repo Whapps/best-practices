@@ -69,17 +69,17 @@ the logic of the code or the documentation.
 
 Focus on:
 
-1 Intent
+1. Intent
   * What change is the author trying to make?
   * Is the bug they're fixing really a bug?
   * Is the feature they're adding one that is wanted?
-2 Architecture
+2. Architecture
   * Is this the right place for the code to operate?
-3 Implementation
+3. Implementation
   * Does the code do what it says?
   * Does it introduce new bugs?
   * Is it documented?
-4 Grammar
+4. Grammar
   * Comment and doc quality
   * Variable, routine name quality, etc
 
