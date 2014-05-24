@@ -35,7 +35,6 @@ comments.
 
 * Use automated tools to maintain constency, eliminate tedium and mistakes.
   * [Perltidy](https://github.com/Whapps/best-practices/tree/master/perl-style#perltidy/ "Perltidy")
-  * XMLLint
 
 Mechanics:
 ==========
