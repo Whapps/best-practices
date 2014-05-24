@@ -98,7 +98,7 @@ review may be required before committing any fixes to master.
 necessary review-related changes.
 
 Benefits
---------
+========
 
 This may be "preaching to the choir" but:
 
