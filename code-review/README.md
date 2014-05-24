@@ -56,33 +56,24 @@ overabundance of time and milestone based items that we would never use.
 Who?
 ----
 
-* Every member of the team has their code reviewed.
+* Every member of the team has their code reviewed!
 
 How?
 ----
 
-* Each member of the group submits code for review via email (or in a
-best-practices meeting).
+* Submit code for review via email or in a best-practices meeting.
 
-* Read code flagged for review.
+* Before the review, read the code!
 
-* Each member of the group should bring any questions that they have regarding
-the logic of the code or the documentation.
+* Bring any questions regarding the code logic or documentation.
 
-* Each member of the group, that has found sections of code to change, files a
-pull request.
-
-* Commit comments - Use an action verb and explain why the changes were made in 50
-chars or less.  If there are more substantial changes to document, use the
-standard commit message format of a single line with "Multiple changes:" followed
-by a blank line, followed by the type of lines described earlier.
+* File a pull request for found sections of code to change/fix.
 
 * Provide suggestions for follow up.
-  * Sometimes you'll want to suggest a change, but it's big, or not strictly
-    related to the current patch, and can be done separately.
+  * Sometimes a change is big, or not strictly related to the current patch, and can be done separately.
   * The author can use the TODO flag in the code
 
-* The person whos code is being reviewed is to take notes or answer questions.  Argument is not acceptable but discussion is.
+* The person whos code is being reviewed is to take notes or answer questions.  Argument is not acceptable but discussion is. :)
 
 * If too many bugs or major issues were identified by a reviewer, a second
 review may be required before committing any fixes.
