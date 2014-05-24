@@ -92,12 +92,7 @@ review may be required before committing any fixes.
 * The developer responsible for the code is also responsible for making all
 necessary review-related changes.
 
-* While the primary responsibility for a change falls on the original author of
-the code, all reviewers share some responsibility.  If a change is determined to
-be problematic, all authors and reviewers are expected to contribute to either
-fixing the change or backing it out.
-
-* In the review, focus on:
+In the review, focus on:
 1. Intent
   * What change is the author trying to make?
   * Is the bug they're fixing really a bug?
