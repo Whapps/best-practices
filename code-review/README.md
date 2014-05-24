@@ -53,10 +53,13 @@ Where?
 communication that would not benefit code review.  Also, it includes an
 overabundance of time and milestone based items that we would never use.
 
-How?
+Who?
 ----
 
 * Every member of the team has their code reviewed.
+
+How?
+----
 
 * Each member of the group submits code for review via email (or in a
 best-practices meeting).
