@@ -93,6 +93,7 @@ review may be required before committing any fixes.
 necessary review-related changes.
 
 In the review, focus on:
+
 1. Intent
   * What change is the author trying to make?
   * Is the bug they're fixing really a bug?
