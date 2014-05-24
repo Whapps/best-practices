@@ -75,8 +75,8 @@ How?
 
 * The person whos code is being reviewed is to take notes or answer questions.  Argument is not acceptable but discussion is. :)
 
-* If too many bugs or major issues were identified by a reviewer, a second
-review may be required before committing any fixes.
+* If too many bugs or major issues were identified, a second
+review may be required before committing any fixes to master.
 
 * The developer responsible for the code is also responsible for making all
 necessary review-related changes.
