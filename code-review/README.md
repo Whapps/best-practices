@@ -65,21 +65,11 @@ How?
 
 * Before the review, read the code!
 
-* Bring any questions regarding the code logic or documentation.
-
 * File a pull request for found sections of code to change/fix.
 
-* Provide suggestions for follow up.
-  * Sometimes a change is big, or not strictly related to the current patch, and can be done separately.
-  * The author can use the TODO flag in the code
+* Bring any questions regarding the code logic or documentation.
 
-* The person whos code is being reviewed is to take notes or answer questions.  Argument is not acceptable but discussion is. :)
-
-* If too many bugs or major issues were identified, a second
-review may be required before committing any fixes to master.
-
-* The developer responsible for the code is also responsible for making all
-necessary review-related changes.
+* The person whos code is being reviewed is there to take notes or answer questions.  Argument is not acceptable but discussion is. :)
 
 In the review, focus on:
 
@@ -96,6 +86,16 @@ In the review, focus on:
 4. Grammar
   * Comment and doc quality
   * Variable, routine name quality, etc
+
+* Provide suggestions for follow up.
+  * Sometimes a change is big, or not strictly related to the current patch, and can be done separately.
+  * The author can use the TODO flag in the code
+
+* If too many bugs or major issues were identified, a second
+review may be required before committing any fixes to master.
+
+* The developer responsible for the code is also responsible for making all
+necessary review-related changes.
 
 Benefits
 --------
