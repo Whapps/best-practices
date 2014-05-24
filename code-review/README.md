@@ -80,7 +80,7 @@ by a blank line, followed by the type of lines described earlier.
   * The author can use the TODO flag in the code
 
 * The person whos code is being reviewed is either not to be in the room or
-there to quietly take notes or answer questions.  Argument is not accptible but
+there to quietly take notes or answer questions.  Argument is not acceptable but
 discussion is.
 
 * If too many bugs or major issues were identified by a reviewer, a second
