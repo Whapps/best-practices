@@ -66,8 +66,38 @@ best-practices meeting).
 * Each member of the group should bring any questions that they have regarding
 the logic of the code or the documentation.
 
-Focus on:
+* Each member of the group, that has found a section of code to change, files a
+pull request for the original code in question ("TODO").
 
+* Keep your changes focused to the minimum necessary.  Otherwise further review
+will be necessary.
+
+* Commit comments - Use an action verb and explain why the changes were made in 50
+chars or less.  If there are more substantial changes to document, use the
+standard commit message format of a single line with "Multiple changes:" followed
+by a blank line, followed by the type of lines described earlier.
+
+* Provide suggestions for follow up.
+  * Sometimes you'll want to suggest a change, but it's big, or not strictly
+    related to the current patch, and can be done separately.
+  * The author can use the TODO flag in the code
+
+* The person whos code is being reviewed is either not to be in the room or
+there to quietly take notes or answer questions.  Argument is not accptible but
+discussion is.
+
+* If too many bugs or major issues were identified by a reviewer, a second
+review may be required before committing any fixes.
+
+* The developer responsible for the code is also responsible for making all
+necessary review-related changes.
+
+* While the primary responsibility for a change falls on the original author of
+the code, all reviewers share some responsibility.  If a change is determined to
+be problematic, all authors and reviewers are expected to contribute to either
+fixing the change or backing it out.
+
+* In the review, focus on:
 1. Intent
   * What change is the author trying to make?
   * Is the bug they're fixing really a bug?
@@ -81,42 +111,6 @@ Focus on:
 4. Grammar
   * Comment and doc quality
   * Variable, routine name quality, etc
-
-* Each member of the group, that has found a section of code to change, files a
-pull request for the original code in question ("TODO").
-
-(A PR takes into account not only what code to inspect, but also where you
-intend changes to be applied.  Maintains a history of code review based
-changes.)
-
-* Keep your changes focused to the minimum necessary.  Otherwise further review
-will be necessary.
-
-* Commit comments - Use an action verb and explain why the changes were made in 50
-chars or less.  If there are more substantial changes to document, use the
-standard commit message format of a single line with "Multiple changes:" followed
-by a blank line, followed by the type of lines described earlier.
-
-* Provide suggestions for follow up.
-  * Sometimes you'll want to suggest a change, but it's big, or not strictly
-    related to the current patch, and can be done separately.
-
-* The person whos code is being reviewed is either not to be in the room or
-there to quietly take notes or answer questions.  Argument is not accptible but
-discussion is.
-
-* If too many bugs or major issues were identified by a reviewer, a second
-review may be required before committing any fixes.
-
-* The developer responsible for the code is also responsible for making all
-necessary review-related changes.
-
-While the primary responsibility for a change falls on the original author of
-the code, all reviewers share some responsibility.  If a change is determined to
-be problematic, all authors and reviewers are expected to contribute to either
-fixing the change or backing it out.
-
-* Use the GitHub compare view to see the change diff.
 
 Benefits
 --------
