@@ -113,7 +113,7 @@ Benefits
 
 This may be "preaching to the choir" but:
 
-"By forcing someone else to have the familiarity to review a piece of code you guarantee that at least two people understand it."
+"By forcing someone else to review a piece of code you guarantee that at least two people understand it."
 
 "By getting someone else to provide feedback based on reading, rather than writing, the code you verify that the code is readable."
 
