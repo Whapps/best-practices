@@ -18,7 +18,7 @@ Goals:
 
 * Make literate code.
 
-* Identify intrensic OLR code idioms, fixtures and artifacts.
+* Identify useful/crusty OLR code idioms, fixtures and artifacts.
   * Tables class
   * Forms class
   * tree_append, as_tree, etc.
