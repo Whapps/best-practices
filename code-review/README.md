@@ -79,9 +79,7 @@ by a blank line, followed by the type of lines described earlier.
     related to the current patch, and can be done separately.
   * The author can use the TODO flag in the code
 
-* The person whos code is being reviewed is either not to be in the room or
-there to quietly take notes or answer questions.  Argument is not acceptable but
-discussion is.
+* The person whos code is being reviewed is to take notes or answer questions.  Argument is not acceptable but discussion is.
 
 * If too many bugs or major issues were identified by a reviewer, a second
 review may be required before committing any fixes.
