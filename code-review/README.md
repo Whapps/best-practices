@@ -42,7 +42,7 @@ Mechanics:
 When?
 -----
 
-* At least once per week for not more than 1 hour.
+* At least twice per month for not more than 1 hour.
 
 Where?
 ------
