@@ -28,6 +28,7 @@ comments.
   * Overly long routines
   * Overly complex conditions
   * Magic literals, etc.
+  * Nested evals, multi-page evals...
 
 * Identify effective code documentation and in-line comment principles.
   * [POD](https://github.com/Whapps/best-practices/blob/master/perl-style/Pod_Coverage.md "POD coverage")
