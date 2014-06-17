@@ -3,6 +3,19 @@ establishes the means by which code is vetted for deployment by OLR developers.*
 
 "Mandatory code review is a best practice.  Code review that is not mandatory is called asking for advice."
 
+Benefits
+========
+
+This may be "preaching to the choir" but:
+
+"By forcing someone else to review a piece of code you guarantee that at least two people understand it."
+
+"By getting someone else to provide feedback based on reading, rather than writing the code, you verify that the code is readable."
+
+"You increase the chances that someone will notice a bug before it manifests itself in production."
+
+"By having a culture of "everyone's code gets reviewed" you promote a culture of positive, constructive feedback."
+
 Goals:
 ======
 
@@ -100,16 +113,3 @@ review may be required before committing any fixes to master.
 
 * The developer responsible for the code is also responsible for making all
 necessary review-related changes.
-
-Benefits
-========
-
-This may be "preaching to the choir" but:
-
-"By forcing someone else to review a piece of code you guarantee that at least two people understand it."
-
-"By getting someone else to provide feedback based on reading, rather than writing the code, you verify that the code is readable."
-
-"You increase the chances that someone will notice a bug before it manifests itself in production."
-
-"By having a culture of "everyone's code gets reviewed" you promote a culture of positive, constructive feedback."
