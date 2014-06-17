@@ -75,6 +75,7 @@ How?
 * The person whos code is being reviewed is there to take notes or answer questions.  Argument is not acceptable but discussion is. :)
 
 * In the review, focus on:
+
 1. Intent
   * What change is the author trying to make?
   * Is the bug they're fixing really a bug?
