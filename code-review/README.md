@@ -82,6 +82,7 @@ How?
   * Is the feature they're adding one that is wanted?
 2. Architecture
   * Is this the right place for the code to operate?
+  * Is this the right data structure to use?
 3. Implementation
   * Does the code do what it says?
   * Does it introduce new bugs?
