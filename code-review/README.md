@@ -33,6 +33,8 @@ comments.
 * Identify effective code documentation and in-line comment principles.
   * [POD](https://github.com/Whapps/best-practices/blob/master/perl-style/Pod_Coverage.md "POD coverage")
   * Inline code comments on the line preceding each code paragraph.
+  * Active voice
+  * Explain with "W words" Why, when, who, what as opposed to "how."
 
 * Use automated tools to maintain constency, eliminate tedium and mistakes.
   * [Perltidy](https://github.com/Whapps/best-practices/tree/master/perl-style#perltidy/ "Perltidy")
