@@ -29,7 +29,7 @@ Goals:
 
 * Make testable code.
 
-* Make literate code.
+* Make self-documenting code.
 
 * Identify useful/crusty OLR code idioms, fixtures and artifacts.
   * Tables class
@@ -41,7 +41,7 @@ comments.
   * Overly long routines
   * Overly complex conditions
   * Magic literals, etc.
-  * Nested evals, multi-page evals...
+  * TODOs that never get acted on
 
 * Identify effective code documentation and in-line comment principles.
   * [POD](https://github.com/Whapps/best-practices/blob/master/perl-style/Pod_Coverage.md "POD coverage")
@@ -58,21 +58,32 @@ Mechanics:
 When?
 -----
 
-* At least twice per month for not more than 1 hour.
+* At least once per project and before QA.
 
 Where?
 ------
 
-* Github + Paris
+* Your workstation.
 
-* The Github Issues interface, while cool, would just be another layer of
-communication that would not benefit code review.  Also, it includes an
-overabundance of time and milestone based items that we would never use.
+* Github + Paris
 
 Who?
 ----
 
 * Every member of the team has their code reviewed!
+
+* Assign an official note taker.
+
+What?
+-----
+
+* Client.pm and related "side-car" modules
+
+* Jobs
+
+* Forms, Tables
+
+* Schemas
 
 How?
 ----
@@ -81,13 +92,13 @@ How?
 
 * Before the review, read the code!
 
-* File a pull request for found sections of code to change/fix.
+* Use the Github Issues tool to flag sections of code needing attention.
 
 * Bring any questions regarding the code logic or documentation.
 
 * The person whos code is being reviewed is there to take notes or answer questions.  Argument is not acceptable but discussion is. :)
 
-* In the review, focus on:
+* For the review, focus on:
 
 1. Intent
   * What change is the author trying to make?
@@ -111,5 +122,8 @@ How?
 * If too many bugs or major issues were identified, a second
 review may be required before committing any fixes to master.
 
+* If you have a patch, file a pull request for found sections of code to change/fix.
+
 * The developer responsible for the code is also responsible for making all
 necessary review-related changes.
+
