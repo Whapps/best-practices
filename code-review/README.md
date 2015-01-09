@@ -127,3 +127,7 @@ review may be required before committing any fixes to master.
 * The developer responsible for the code is also responsible for making all
 necessary review-related changes.
 
+Possibly Handy Links
+--------------------
+
+http://blog.fogcreek.com/increase-defect-detection-with-our-code-review-checklist-example
