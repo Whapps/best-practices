@@ -77,3 +77,83 @@ Included in this folder is a .perltidyrc file that contains the Online Rewards s
 When faced with poorly formatted code feel free to use perltidy but always commit the formatting changes separate from any other changes. Committing formatting changes along with other changes can cause complications when diff-ing.
 
 **[⬆ back to top](#table-of-contents)**
+
+## Proposed change to eval calls
+
+While playing with perlcritic I saw the following:
+
+
+<pre>
+    A common idiom in perl for dealing with possible errors is to use `eval'
+    followed by a check of `$@'/`$EVAL_ERROR':
+
+        eval {
+            ...
+        };
+        if ($EVAL_ERROR) {
+            ...
+        }
+
+    There's a problem with this: the value of `$EVAL_ERROR' can change
+    between the end of the `eval' and the `if' statement. The issue is
+    object destructors:
+
+        package Foo;
+
+        ...
+
+        sub DESTROY {
+            ...
+            eval { ... };
+            ...
+        }
+
+        package main;
+
+        eval {
+            my $foo = Foo->new();
+            ...
+        };
+        if ($EVAL_ERROR) {
+            ...
+        }
+
+    Assuming there are no other references to `$foo' created, when the
+    `eval' block in `main' is exited, `Foo::DESTROY()' will be invoked,
+    regardless of whether the `eval' finished normally or not. If the `eval'
+    in `main' fails, but the `eval' in `Foo::DESTROY()' succeeds, then
+    `$EVAL_ERROR' will be empty by the time that the `if' is executed.
+    Additional issues arise if you depend upon the exact contents of
+    `$EVAL_ERROR' and both `eval's fail, because the messages from both will
+    be concatenated.
+
+    Even if there isn't an `eval' directly in the `DESTROY()' method code,
+    it may invoke code that does use `eval' or otherwise affects
+    `$EVAL_ERROR'.
+</pre>
+
+It suggests the following be done to the eval to make sure it is trapped correctly:
+
+<pre>
+    The solution is to ensure that, upon normal exit, an `eval' returns a
+    true value and to test that value:
+
+        # Constructors are no problem.
+        my $object = eval { Class->new() };
+
+        # To cover the possiblity that an operation may correctly return a
+        # false value, end the block with "1":
+        if ( eval { something(); 1 } ) {
+            ...
+        }
+
+        eval {
+            ...
+            1;
+        }
+        or do {
+                # Error handling here
+        };
+</pre>
+
+I played with this syntax and actually find it to make sense.
