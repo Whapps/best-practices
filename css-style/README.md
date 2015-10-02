@@ -2,10 +2,10 @@
 
 ## Table of Contents
 	1. [Indentation](#indentation)
-	2. [Naming](#naming)
-	3. [Spacing](#spacing)
-	4. [Comments](#comments)
-	5. [Things to avoid](#things)
+	1. [Naming](#naming)
+	1. [Spacing](#spacing)
+	1. [Comments](#comments)
+	1. [Things to avoid](#things)
 	
 ## Indentation
 
