@@ -6,3 +6,13 @@
 	3. [Spacing](#spacing)
 	4. [Comments](#comments)
 	5. [Things to avoid](#things)
+	
+## Indentation
+
+## Naming
+
+## Spacing
+
+## Comments
+
+## Things to avoid
