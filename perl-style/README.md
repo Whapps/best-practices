@@ -77,3 +77,58 @@ Included in this folder is a .perltidyrc file that contains the Online Rewards s
 When faced with poorly formatted code feel free to use perltidy but always commit the formatting changes separate from any other changes. Committing formatting changes along with other changes can cause complications when diff-ing.
 
 **[⬆ back to top](#table-of-contents)**
+
+## Rose::DB
+TODO: description
+
+### Invoking Rose
+BaseJob scripts:
+C5 Base module and site inherits thereof:
+Anywhere else in a C5 site:
+
+### Query ambiguity, or how to avoid `->[0]`
+You may come across some old code with Rose queries that look like this:
+```perl
+# bad
+my $registry = $self->_manager{'Registry'}->get_objects(
+    query => { external_id => $external_id },
+)->[0];
+```
+This runs the query and takes the first result.  There is no accounting for the possibility of multiple results, which should be a fatal error in a case like this.
+Rose knows what columns are unique, so take advantage of that:
+```perl
+# good
+my $registry = $self->_rose{'Registry'}->new(
+    external_id => $external_id,
+)->load;
+```
+This is unambiguous, and easier to read.  Rose will give you exactly one result, and throw an error if it can't.  The arguments to `new()` must comprise a unique key or Rose will throw an error.
+
+If no result is an expected possibility that needs to be handled, `load_speculative` can be used:
+```perl
+# good
+my $registry = $self->_rose{'Registry'}->new(
+    external_id => $external_id,
+);
+unless ( $registry->load_speculative )
+{
+    # do stuff to handle the lack of a result
+    $registry->init(
+        external_id => $external_id,
+    )->save;
+}
+```
+
+`->[0]` is only valid when combined with a sort, where we specifically *do* want the first result of a set:
+```perl
+# good
+my $registry = $self->_manager{'Registry'}->get_objects(
+    query => {
+        locked => 0,
+        archived => 0,
+    },
+    sort_by => 'last_login_date',
+)->[0];
+```
+
+**[⬆ back to top](#table-of-contents)**
