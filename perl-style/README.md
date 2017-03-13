@@ -4,6 +4,7 @@
   1. [Whitespace](#whitespace)
   1. [Blocks](#blocks)
   1. [perltidy](#perltidy)
+  1. [Rose::DB](#rosedb)
 
 ## Whitespace
 
@@ -81,11 +82,6 @@ When faced with poorly formatted code feel free to use perltidy but always commi
 ## Rose::DB
 TODO: description
 
-### Invoking Rose
-BaseJob scripts:
-C5 Base module and site inherits thereof:
-Anywhere else in a C5 site:
-
 ### Query ambiguity, or how to avoid `->[0]`
 You may come across some old code with Rose queries that look like this:
 ```perl
@@ -93,35 +89,35 @@ You may come across some old code with Rose queries that look like this:
 my $registry = $self->_manager{'Registry'}->get_objects(
     query => { external_id => $external_id },
 )->[0];
+die "not found" unless $registry;
 ```
-This runs the query and takes the first result.  There is no accounting for the possibility of multiple results, which should be a fatal error in a case like this.
-Rose knows what columns are unique, so take advantage of that:
+This is ambiguous!  It runs the query and takes the first result, which will be at random if there's more than one.
+
+A better appraoch is to use `->new` and `->load` to guarantee no more than one result:
 ```perl
-# good
+# good -- dies if no result
 my $registry = $self->_rose{'Registry'}->new(
     external_id => $external_id,
 )->load;
-```
-This is unambiguous, and easier to read.  Rose will give you exactly one result, and throw an error if it can't.  The arguments to `new()` must comprise a unique key or Rose will throw an error.
 
-If no result is an expected possibility that needs to be handled, `load_speculative` can be used:
-```perl
-# good
+# --or--
+
+# good -- doesn't die if no result
 my $registry = $self->_rose{'Registry'}->new(
     external_id => $external_id,
 );
 unless ( $registry->load_speculative )
 {
     # do stuff to handle the lack of a result
-    $registry->init(
-        external_id => $external_id,
-    )->save;
 }
 ```
+The arguments to `new` must comprise a unique key, so tables need to be structured correctly, with unique constraints where appropraite.
+Thus this approach also helps enforce good DB design.
 
-`->[0]` is only valid when combined with a sort, where we specifically *do* want the first result of a set:
+#### The exception
+If the order of results is known, as when using a `sort_by`, then `->[0]` is not ambiguous:
 ```perl
-# good
+# good - the result is not random
 my $registry = $self->_manager{'Registry'}->get_objects(
     query => {
         locked => 0,
@@ -131,4 +127,5 @@ my $registry = $self->_manager{'Registry'}->get_objects(
 )->[0];
 ```
 
+### OTHER THING HERE
 **[⬆ back to top](#table-of-contents)**
