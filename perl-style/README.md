@@ -79,8 +79,49 @@ When faced with poorly formatted code feel free to use perltidy but always commi
 
 **[⬆ back to top](#table-of-contents)**
 
+## Encoding
+
+### JSON
+Never use `to_json` or `from_json`, as they are not unicode-aware.
+`encode_json` and `decode_json` are preferred.
+
+### utf8 and UTF-8
+Perl internally uses `utf8` encoding for most string scalars.  However, it's important to note that this is not quite the same thing as the [common](https://en.wikipedia.org/wiki/UTF-8), [strictly-defined](https://tools.ietf.org/html/rfc3629) `UTF-8`.
+`utf8` is a superset of `UTF-8`.  Specifically, `utf8` allows any 32-bit code point, while `UTF-8` allows only valid codepoints as defined in the UTF-8 encoding standard.
+This situation creates some caveats to be aware of, mainly with regard to how invalid UTF-8 is handled:
+```perl
+my $string = "abc\x{110000}\n";
+print $string;   # warning: "Wide character in print"
+# output: "abc????", chars: 61 62 63 110000
+```
+`\x{110000}` is not a valid character.  `print` warns you about this.
+
+There are different ways to handle getting proper UTF-8 for output, hashing, or encryption:
+```perl
+# BAD
+utf8::encode($string);  # in-place conversion (never use this)
+$string = encode('utf8',$string);  # this does the same thing
+print $string;
+# output: "abc????", chars: 61 62 63 f4 90 80 80
+```
+'encoding' with perl's utf8 just gives you bytes representing perl's internal storage of the characters.  `\x{110000}` wasn't valid UTF-8 to begin with, so we just get garbage.
+So let's try encoding to proper UTF-8 specifically:
+```perl
+# BAD
+$string = encode('UTF-8', $string);
+print $string;
+# output: "abc�" chars: 61 62 63 ef bf bd
+```
+This works, but where'd that [`\x{efbfbd}`](http://www.fileformat.info/info/unicode/char/0fffd/index.htm) character come from?  By default, `encode` automatically replaces any invalid characters.  In almost all cases, we would prefer that it didn't.  Fortunately, this is [very configurable](http://perldoc.perl.org/Encode.html#Handling-Malformed-Data):
+```perl
+# GOOD
+$string = encode('UTF-8', $string, 1);
+# dies: "\x{110000}" does not map to utf8
+```
+
+**[⬆ back to top](#table-of-contents)**
+
 ## Rose::DB
-TODO: description
 
 ### Query ambiguity, or how to avoid `->[0]`
 You may come across some old code with Rose queries that look like this:
@@ -127,5 +168,22 @@ my $registry = $self->_manager{'Registry'}->get_objects(
 )->[0];
 ```
 
-### OTHER THING HERE
+### init
+When setting multiple properties of a Rose::DB object, `init` can help make things cleaner:
+```perl
+# messy
+$registry->first_name($args{first_name});
+$registry->last_name($args{last_name});
+# etc etc
+$registry->email($args{email});
+
+# better
+$registry->init(
+    first_name => $args{first_name},
+    last_name  => $args{last_name},
+    # etc etc
+    email      => $args{email},
+);
+```
+
 **[⬆ back to top](#table-of-contents)**
