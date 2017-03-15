@@ -3,6 +3,7 @@
 ## Table of Contents
   1. [Whitespace](#whitespace)
   1. [Blocks](#blocks)
+  1. [Names](#names)
   1. [perltidy](#perltidy)
   1. [Encoding](#encoding)
   1. [Rose::DB](#rosedb)
@@ -16,7 +17,7 @@
 
 It may seem like a dated convention, but it is a convention that is [still widely followed today.](http://sideeffect.kr/popularconvention) Generally, 80 columns will let someone on a small screen (like a 13" non-retina Macbook) fully view 2 files side by side.
 
-There are cases when a long line is better overzealous line breaking. Use your personal judgement when breaking this rule.
+There are cases when a long line is better than overzealous line breaking. Use your personal judgement when breaking this rule.
 
 ### Break immediately after an opening token if a line break is necessary at all.
 
@@ -43,6 +44,25 @@ my %cincinnati_reds = (
 );
 ```
 
+### Vertically align corresponding code.
+
+When a section of repeating code, such as a large hash assignment, has more than one 'column', align it.  It makes your code look and read much better.
+```perl
+# bad
+my %user = (
+    first_name => $first_name,
+    last_name => $last_name,
+    email => $email,
+);
+
+# good
+my %user = (
+    first_name => $first_name,
+    last_name  => $last_name,
+    email      => $email,
+);
+```
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Blocks
@@ -62,6 +82,17 @@ if (test)
     return false;
 }
 ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Names
+
+### Filenames should be hyphen-separated.
+bad: `some_cron_script.pl`
+good: `some-cron-script.pl`
+
+### Variable names should normally be lowercase, underscore\_separated.
+Unless they are `$CONTANT_VARIABLES`.
 
 **[⬆ back to top](#table-of-contents)**
 
