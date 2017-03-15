@@ -112,7 +112,7 @@ $string = encode('UTF-8', $string);
 print $string;
 # output: "abc�" chars: 61 62 63 ef bf bd
 ```
-This works, but where'd that [`\x{efbfbd}`](http://www.fileformat.info/info/unicode/char/0fffd/index.htm) character come from?  By default, `encode` automatically replaces any invalid characters.  In almost all cases, we would prefer that it didn't.  Fortunately, this is [very configurable](http://perldoc.perl.org/Encode.html#Handling-Malformed-Data):
+This gives us valid UTF-8, but where'd that [`\x{efbfbd}`](http://www.fileformat.info/info/unicode/char/0fffd/index.htm) character come from?  By default, `encode` automatically replaces any invalid characters.  In almost all cases, we would prefer that it didn't.  Fortunately, this is [very configurable](http://perldoc.perl.org/Encode.html#Handling-Malformed-Data):
 ```perl
 # GOOD
 $string = encode('UTF-8', $string, 1);
@@ -152,7 +152,7 @@ unless ( $registry->load_speculative )
     # do stuff to handle the lack of a result
 }
 ```
-The arguments to `new` must comprise a unique key, so tables need to be structured correctly, with unique constraints where appropraite.
+The arguments to `new` must include or comprise at least one unique key as known to Rose::DB, so tables need to be structured correctly, with unique constraints where appropraite.
 Thus this approach also helps enforce good DB design.
 
 #### The exception
@@ -164,7 +164,7 @@ my $registry = $self->_manager{'Registry'}->get_objects(
         locked => 0,
         archived => 0,
     },
-    sort_by => 'last_login_date',
+    sort_by => 'last_login_date DESC',
 )->[0];
 ```
 
