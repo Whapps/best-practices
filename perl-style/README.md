@@ -4,6 +4,7 @@
   1. [Whitespace](#whitespace)
   1. [Blocks](#blocks)
   1. [perltidy](#perltidy)
+  1. [Encoding](#encoding)
   1. [Rose::DB](#rosedb)
 
 ## Whitespace
@@ -94,7 +95,7 @@ my $string = "abc\x{110000}\n";
 print $string;   # warning: "Wide character in print"
 # output: "abc????", chars: 61 62 63 110000
 ```
-`\x{110000}` is not a valid character.  `print` warns you about this.
+`\x{110000}` is not a valid character, but perl accepts and handles it anyway.  `print` only warns about it as the character is sent outside perl.
 
 There are different ways to handle getting proper UTF-8 for output, hashing, or encryption:
 ```perl
