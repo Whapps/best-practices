@@ -245,24 +245,43 @@ my $things = $self->_manager('Thing')->get_objects(
 C5-specific styles.
 
 ### Use `->g()`, not `->configuration->g()` or `->configuration->get_config()`
-They do the same thing.
+They do the same thing and these lines are usually long enough already.
 
 ### subs in Forms should always end with an explicit `return;`.
+
 
 ### Just `die` on fatal errors (in most cases).  "Die Early"
 C5 has good error handling, and trying to trap or account for every possible error is both tiring and makes code harder to read.  So unless there's a specific need to trap and handle errors (as when working with the order system) or give specific feedback for common problems (as in API handling), we want to just let errors die, the earlier the better.
 
 ```perl
-sub method_only_available_to_participants
-{
-    my ($self, %args) = @_;
-
 # bad
     die "something went wrong!" unless $args{input};
     my $stuff = get_stuff($args{input});
 
 # good
-    my $stuff = get_stuff($args{input});
+    my $stuff = get_stuff($args{input});  # where get_stuff will die without the argument anyway
+```
+
+This applies especially to [Rose::DB](#rosedb) lookups.
+If something is required and you're going to get it via Rose::DB anyway, just let Rose die, rather than explicitly checking for it.
+```perl
+sub method_that_requires_registry
+{
+    my ($self, %args) = @_;
+
+    # bad (in this case)
+    die "need external_id!" unless $args{external_id};
+
+    # bad (always)
+    my $registry = $self->_rose('Registry')->new(
+        external_id => $args{external_id}
+    );
+    die unless $registry->load_speculative;
+
+    # good
+    my $registry = $self->_rose('Registry')->new(
+        external_id => $args{external_id}
+    )->load;
 }
 ```
 
