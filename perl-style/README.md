@@ -7,6 +7,7 @@
   1. [perltidy](#perltidy)
   1. [Encoding](#encoding)
   1. [Rose::DB](#rosedb)
+  1. [Chameleon5](#chameleon5)
 
 ## Whitespace
 
@@ -91,7 +92,7 @@ if (test)
 bad: `some_cron_script.pl`
 good: `some-cron-script.pl`
 
-### Variable names should normally be lowercase, underscore\_separated.
+### Variable names should normally be lowercase, `$underscore_separated`.
 Unless they are `$CONTANT_VARIABLES`.
 
 **[⬆ back to top](#table-of-contents)**
@@ -216,6 +217,53 @@ $registry->init(
     # etc etc
     email      => $args{email},
 );
+```
+
+### DateTime queries
+Generally, try to avoid using perl's DateTime when querying the DB.
+```perl
+# bad
+my $things = $self->_manager('Thing')->get_objects(
+    query => [
+        create_when => { ge => DateTime->now->subtract(days => 7)->date },
+        expire_when => { lt => DateTime->now };
+    ],
+);
+
+# good
+my $things = $self->_manager('Thing')->get_objects(
+    query => [
+        create_when => { ge_sql => 'DATESUB(NOW(), INTERVAL 7 DAY)' },
+        expire_when => { lt => 'now' };         # Rose::DB tip:  'now' = { sql => 'NOW()' }
+    ],
+);
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Chameleon5
+C5-specific styles.
+
+### Use `->g()`, not `->configuration->g()` or `->configuration->get_config()`
+They do the same thing.
+
+### subs in Forms should always end with an explicit `return;`.
+
+### Just `die` on fatal errors (in most cases).  "Die Early"
+C5 has good error handling, and trying to trap or account for every possible error is both tiring and makes code harder to read.  So unless there's a specific need to trap and handle errors (as when working with the order system) or give specific feedback for common problems (as in API handling), we want to just let errors die, the earlier the better.
+
+```perl
+sub method_only_available_to_participants
+{
+    my ($self, %args) = @_;
+
+# bad
+    die "something went wrong!" unless $args{input};
+    my $stuff = get_stuff($args{input});
+
+# good
+    my $stuff = get_stuff($args{input});
+}
 ```
 
 **[⬆ back to top](#table-of-contents)**
