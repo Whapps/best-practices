@@ -247,8 +247,8 @@ C5-specific styles.
 ### Use `->g()`, not `->configuration->g()` or `->configuration->get_config()`
 They do the same thing and these lines are usually long enough already.
 
-### subs in Forms should always end with an explicit `return;`.
-The return value from these subs tells C5 if the sub was successful or not.  Don't leave it up to perl's [defaults](http://perldoc.perl.org/perlvar.html#General-Variables).
+### subs should always end with an explicit `return;`.
+The return value often determines if the sub was successful or not.  Don't leave it up to perl's [defaults](http://perldoc.perl.org/perlvar.html#General-Variables).
 
 ### Just `die` on fatal errors (in most cases).  "Die Early"
 C5 has good error handling, and trying to trap or account for every possible error is both tiring and makes code harder to read.  So unless there's a specific need to trap and handle errors (as when working with the order system) or give specific feedback for common problems (as in API handling), we want to just let errors die, the earlier the better.
