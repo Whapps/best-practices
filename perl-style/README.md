@@ -64,6 +64,41 @@ my %user = (
 );
 ```
 
+### Add spacing inside single-line parentheses/brackets only where it improves legibility
+Don't add spacing for only one set.
+```perl
+# bad
+my $result = do_a_thing( $stuff );
+
+# good
+my $result = do_a_thing($stuff);
+```
+Do add spacing where multiple sets of parentheses/brackets make the line difficult to read.
+How much is enough to use spacing, is up to you.
+```perl
+# bad
+my $result = do_a_thing(do_another_thing($also_a_hashref->{$stuff}));
+
+# good
+my $result = do_a_thing( do_another_thing($also_a_hashref->{$stuff}) );
+```
+If a line gets too crazy, consider breaking out into multiple lines, following the other rules above:
+```perl
+# bad -- spacing helps, but this is still too much
+my $result = do_a_thing( do_another_thing( $also_a_hashref->{ $some_hashref->{ $and_an_arrayref->[$stuff] } } ) );
+
+# good
+my $result = do_a_thing(
+    do_another_thing(
+        $also_a_hashref->{
+            $some_hashref->{
+                $and_an_arrayref->[$stuff]
+            }
+        }
+    )
+);
+```
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Blocks
@@ -198,6 +233,7 @@ my $registry = $self->_manager{'Registry'}->get_objects(
         archived => 0,
     },
     sort_by => 'last_login_date DESC',
+    limit => 1,  # don't return more than what we're actually going to use
 )->[0];
 ```
 
