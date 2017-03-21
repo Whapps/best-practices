@@ -285,12 +285,12 @@ my $account = $self->_rose('Account')->new(id => $id); # let's say account.balan
 
 # bad -- if two of these happen to run at the same time, the final balance could be 200 instead of the correct 300
 $account->load;
-$account->balance( $account->balance + 100 );
+$account->balance($account->balance + 100);
 $account->save;
 
 # good -- this locks the row
 $account->load(for_update => 1);  # equivalent to adding "FOR UPDATE" to the SELECT
-$account->balance( $account->balance + 100 );
+$account->balance($account->balance + 100);
 $account->save;
 ```
 This locking only works within a DB transaction, which must be ended with a `commit` or `rollback`.  C5 automatically takes care of this, but there are some cases where you'll want to directly control this DB interaction:
@@ -302,8 +302,8 @@ $db->begin_work;
 eval {
     my $account = $self->_rose('Account')->new(
         id => $id
-    )->load( db => $db, for_update => 1);  # have Rose use this local DB handle
-    $account->balance( $account->balance + 100);
+    )->load(db => $db, for_update => 1);  # have Rose use this local DB handle
+    $account->balance($account->balance + 100);
     $account->save;
 
     some_method_that_can_fail($account);
