@@ -275,6 +275,51 @@ my $things = $self->_manager('Thing')->get_objects(
 );
 ```
 
+### Locking
+> this section definitely needs review
+Sometimes it may be necessary to lock rows to ensure data correctness.  Point transactions, for example, lock the relevant account row during update so only one process can update it at a time.
+As a general rule of thumb, if the update includes the existing value as factor in the new value, it should be locked for update.
+```perl
+my $account = $self->_rose('Account')->new(id => $id); # let's say account.balance = 100
+
+# bad -- if two of these happen to run at the same time, the final balance could be 200 instead of the correct 300
+$account->load;
+$account->balance( $account->balance + 100 );
+$account->save;
+
+# good -- this locks the row
+$account->load(for_update => 1);  # equivalent to adding "FOR UPDATE" to the SELECT
+$account->balance( $account->balance + 100 );
+$account->save;
+```
+This locking only works within a DB transaction, which must be ended with a `commit` or `rollback`.  C5 automatically takes care of this, but there are some cases where you'll want to directly control this DB interaction:
+```perl
+use Chameleon5::DB;
+my $db = Chameleon5::DB->new_or_cached;
+
+$db->begin_work;
+eval {
+    my $account = $self->_rose('Account')->new(
+        id => $id
+    )->load( db => $db, for_update => 1);  # have Rose use this local DB handle
+    $account->balance( $account->balance + 100);
+    $account->save;
+
+    some_method_that_can_fail($account);
+
+    $db->commit;
+};
+if ($@)
+{
+    $db->rollback;  # undo the account update and anything some_method_that_can_fail did
+
+    # since we caught the error and rolled back the DB ourselves, this won't get rolled back by C5:
+    my $error_log = $self->_rose('ErrorLog')->new(
+        what_failed => 'some_method_that_can_fail',
+    )->save;
+}
+```
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Chameleon5
