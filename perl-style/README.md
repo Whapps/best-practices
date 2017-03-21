@@ -277,6 +277,7 @@ my $things = $self->_manager('Thing')->get_objects(
 
 ### Locking
 > this section definitely needs review
+
 Sometimes it may be necessary to lock rows to ensure data correctness.  Point transactions, for example, lock the relevant account row during update so only one process can update it at a time.
 As a general rule of thumb, if the update includes the existing value as factor in the new value, it should be locked for update.
 ```perl
