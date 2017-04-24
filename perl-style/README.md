@@ -117,5 +117,6 @@ if ($registry->foo && $registry->foo->bars)
         data => $registry->foo->bars->as_tree,
     );
 }
+```
 
 **[⬆ back to top](#table-of-contents)**
