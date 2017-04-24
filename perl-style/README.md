@@ -123,9 +123,9 @@ if ($registry->foo && $registry->foo->bars)
 Add a 'usage' output to a standalone script if it takes required or optional arguments.
 ```perl
 \\ Short Method
-my $usage = "Usage: $0 --required-1 DATE [--option-2]";
+my $usage_string = "Usage: $0 --required-1 DATE [--option-2]";
 
-my ($required_1,$option_2);
+my ($required_1,$option_2,$usage);
 
 GetOptions(
     "required-1=s" => \$required_1,
@@ -133,7 +133,7 @@ GetOptions(
     "usage"        => \$usage,
 );
 
-die $usage if (!$required_1 || $usage);
+die $usage_string if (!$required_1 || $usage);
 
 \\ Long Method
 my ($required_1,$option_2,$usage);
