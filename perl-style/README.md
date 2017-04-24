@@ -98,7 +98,7 @@ my $test_variable = $self->g('base3/constants/something');
 ```
 
 ### Check the existence of linked objects before referencing them
-If the object does not exist, referencing one of it's linked objects will blow up.  Check it's existence first.
+If the object does not exist, referencing one of its linked objects will blow up.  Check the existence of the linked objects first.
 ```perl
 // bad
 my $registry = $self->_manager('Registry')->get_objects( ... );
@@ -116,6 +116,51 @@ if ($registry->foo && $registry->foo->bars)
         tag  => 'bars',
         data => $registry->foo->bars->as_tree,
     );
+}
+```
+
+### Add usage output to standalone scripts
+Add a 'usage' output to a standalone script if it takes required or optional arguments.
+```perl
+\\ Short Method
+my $usage = "Usage: $0 --required-1 DATE [--option-2]";
+
+my ($required_1,$option_2);
+
+GetOptions(
+    "required-1=s" => \$required_1,
+    "option-2"     => \$option_2,
+    "usage"        => \$usage,
+);
+
+die $usage unless $required_1;
+
+\\ Long Method
+my ($required_1,$option_2,$usage);
+
+GetOptions(
+    "required-1=s" => \$required_1,
+    "option-2"     => \$option_2,
+    "usage"        => \$usage,
+);
+
+usage() if (!$required_1 || $usage);
+
+sub usage
+{
+    print <<USAGE
+    Usage: script_name --required-1 DATE [ --option-2 ]
+
+    Arguments:
+      --required-1 DATE
+        Does this, that, and the other thing with DATE.
+	Example: --required-1 2017-04-24
+
+      --option-2
+        Does something.
+
+USAGE
+    exit 1;
 }
 ```
 
