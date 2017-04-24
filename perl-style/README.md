@@ -4,6 +4,7 @@
   1. [Whitespace](#whitespace)
   1. [Blocks](#blocks)
   1. [perltidy](#perltidy)
+  1. [Variables] (#variables)
 
 ## Whitespace
 
@@ -75,5 +76,46 @@ $ cpanm Perl::Tidy
 Included in this folder is a .perltidyrc file that contains the Online Rewards suggested defaults.
 
 When faced with poorly formatted code feel free to use perltidy but always commit the formatting changes separate from any other changes. Committing formatting changes along with other changes can cause complications when diff-ing.
+
+**[⬆ back to top](#table-of-contents)**
+
+## Variables
+
+### Declare variables near their usage
+Create variable declarations as near to their usage as possible.  For example, don't declare a variable that is not referenced until 25 lines later.
+```perl
+// bad
+my $test_variable;
+
+# ... 25 rows later ...
+
+$test_variable = $self->g('base3/constants/something');
+
+// good
+# ... 25 rows of other code ...
+
+my $test_variable = $self->g('base3/constants/something');
+```
+
+### Check the existence of linked objects before referencing them
+If the object does not exist, referencing one of it's linked objects will blow up.  Check it's existence first.
+```perl
+// bad
+my $registry = $self->_manager('Registry')->get_objects( ... );
+
+$self->tree_append(
+    tag  => 'bars',
+    data => $registry->foo->bars->as_tree,
+);
+// good
+my $registry = $self->_manager('Registry')->get_objects( ... );
+
+if ($registry->foo && $registry->foo->bars)
+{
+    $self->tree_append(
+        tag  => 'bars',
+        data => $registry->foo->bars->as_tree,
+    );
+}
 
 **[⬆ back to top](#table-of-contents)**
