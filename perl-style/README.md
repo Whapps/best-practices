@@ -133,7 +133,7 @@ GetOptions(
     "usage"        => \$usage,
 );
 
-die $usage unless $required_1;
+die $usage if (!$required_1 || $usage);
 
 \\ Long Method
 my ($required_1,$option_2,$usage);
