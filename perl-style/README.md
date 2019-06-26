@@ -3,6 +3,7 @@
 ## Table of Contents
   1. [Whitespace](#whitespace)
   1. [Blocks](#blocks)
+  1. [Comments](#comments)
   1. [perltidy](#perltidy)
 
 ## Whitespace
@@ -60,6 +61,55 @@ if (test)
     return false;
 }
 ```
+
+### Always return via an explicit ```return```
+
+Since perl will return the value of the last expression evaluated in a subroutine if return is not passed, explicit returns should be used to prevent unexpected return values. This also improves readability in subs where there are multiple returns.
+
+```
+# bad
+sub do_something
+{
+    my $thing = 45;
+}
+
+# good
+sub do_something
+{
+    my $thing = 45;
+    return $thing;
+}
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+## Comments
+
+### Use POD sections to comment above each method
+
+That way later we can just ```perldoc Your::Module``` and get a user interface guide.
+
+```
+=head2 some_method
+
+ Takes no argument.  This is a reason you would
+ call this method.  Here is what you might
+ expect it to do and/or return.
+
+=cut
+
+sub some_method
+{
+    my $self = shift;
+    print "Doing something\n";
+}
+```
+
+Another benefit for using POD to comment on your methods is that pod2html can then generate
+pretty versions of your docs.
+
+But don't rely just on the POD sections to comment your code.  POD sections are more useful to programmers who are coming into your codebase later to use it.  Any sufficiently complicated section of code should also be commented inline.
 
 **[⬆ back to top](#table-of-contents)**
 
